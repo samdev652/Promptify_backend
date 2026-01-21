@@ -21,6 +21,22 @@ seven_days_ago = today - timedelta(days=7)
 thirty_days_ago = today - timedelta(days=30)
 
 
+@api_view(['GET'])
+def home(request):
+    """Welcome endpoint showing available API routes"""
+    return Response({
+        'message': 'Welcome to Promptify API',
+        'endpoints': {
+            'prompt_gpt': '/prompt_gpt/',
+            'get_chat_messages': '/get_chat_messages/<chat_id>/',
+            'todays_chat': '/todays_chat/',
+            'yesterdays_chat': '/yesterdays_chat/',
+            'seven_days_chat': '/seven_days_chat/',
+            'admin': '/admin/'
+        }
+    })
+
+
 def createChatTitle(user_message):
     try:
         response = client.chat.completions.create(

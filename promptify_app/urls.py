@@ -4,6 +4,7 @@ from . import views
 
 
 urlpatterns = [
+    path("", views.home, name="home"),
     path("prompt_gpt/", views.prompt_gpt, name="prompt_gpt"),
     path("get_chat_messages/<str:pk>/", views.get_chat_messages, name="get_chat_messages"),
     path("todays_chat/", views.todays_chat, name="todays_chat"),
