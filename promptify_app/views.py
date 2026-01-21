@@ -7,10 +7,11 @@ from promptify_app.models import Chat, ChatMessage
 from promptify_app.serializers import ChatMessageSerializer, ChatSerializer
 from django.utils import timezone
 from datetime import timedelta
+import os
 
 
 # Create your views here.
-client = OpenAI()
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 now = timezone.now()
