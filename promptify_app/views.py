@@ -10,8 +10,10 @@ from datetime import timedelta
 import os
 
 
+
 # Create your views here.
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
 
 
 now = timezone.now()
